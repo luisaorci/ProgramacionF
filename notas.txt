@@ -72,3 +72,18 @@ Ej. echo hola
 date. Te da el dia, la fecha y la hora.
 Ej. Date
 Tue Jan 27 19:30:30 MTS 2015
+
+n. Repite la ultima busqueda
+Ej. n
+
+q. Del ingles quit, significa quitar, es para cerrar un programa.
+Ej. q
+
+G. Para ver el final de un archivo de texto.
+Ej. G
+
+1G. Para ver el principio de un archivo de texto.
+Ej 1G
+
+
+

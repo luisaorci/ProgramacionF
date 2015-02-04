@@ -1,0 +1,89 @@
+M A N U A L.
+
+echo $SHELL. Te muestra el shell que estas utilizando.
+Ej. /bin/bash
+
+flecha hacia arriba y hacia abajo. Se utilian para navegar en el historial de los comandos utilizados, es un atajo.
+
+pwd. Son las siglas de Present Working Directory, se refiere al directorio en el que estas actualmente.
+
+ls. Da una lista de todo el contenido de un directorio.
+Ej. ls
+
+ls -a. Da una lista de todos los archivos de un directorio incluyendo los archivos escondidos.
+
+cd. Abrebiacion para Cambio de Directorio, te mueve del directorio donde estas a otro.
+Ej. cd Notas
+
+file. Te da la informacion sobre el archivo o directorio en el cual estas.
+Ej. file notas.txt
+
+man <comando>. Busca el comando en el manual.
+Ej. man bash
+
+man -k <palabra que se esta buscando>. Busca la palabra o termino en el manual.
+Ej. man -k shell
+
+mkdir. Se utiliza para crear un nuevo directorio, (make directory en ingles).
+Ej. mkdir Fotos
+
+rmdir. Se utiliza para eliminar un directorio, (remove directory en ingles).
+Ej. rmdir Fotos
+
+touch. Crea un archivo en blanco.
+Ej. touch Libro
+
+cp. Se utiliza para copiar una foto o un directorio, se pone primero el comando, seguido del archivo o directorio que se desea copiar, seguido del nombre del directorio o archivo donde se va a pegar.
+Ej. cp Fotos fotos
+
+mv. Se utiliza para renombrar archivos y directorios.
+Ej. mv fotos pictures
+
+rm. Borra un archivo, (en ingels remove).
+Ej. rm Libro
+
+vi. Se utiliza para editar un archivo.
+Ej. vi notas.txt
+
+cat. Se utiliza para ver un archivo.
+Ej. cat notas.txt
+
+less. Se utiliza para ver archivos grandes de una forma mas ordenada.
+Ej. less notas.txt
+
+chmod. Cambia los permisos de un archivo o de un directorio.
+Ej. chmod Notas 777
+
+ls -ld. Te muestra los permisos de un directorio en particular.
+Ej. ls -ld Notas
+
+grep. Nos permite buscar dentro de nuestros archivos.
+Ej. $grep '\<a.*\>' archivo
+
+| (pipe). Sirve para que la salida de un archivo se redirija a la entrada de otro.
+Ej. grep nose notas.txt | gzip > archivo
+
+kill. Mata un proceso
+Ej. kill 309
+
+echo. Imprime mensajes en la pantalla.
+Ej. echo hola
+
+date. Te da el dia, la fecha y la hora.
+Ej. Date
+Tue Jan 27 19:30:30 MTS 2015
+
+n. Repite la ultima busqueda
+Ej. n
+
+q. Del ingles quit, significa quitar, es para cerrar un programa.
+Ej. q
+
+G. Para ver el final de un archivo de texto.
+Ej. G
+
+1G. Para ver el principio de un archivo de texto.
+Ej 1G
+
+
+

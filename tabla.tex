@@ -1,0 +1,79 @@
+% Ejemplo de documento LaTeX
+% Tipo de documento y tamaño de letra
+\documentclass[12pt]{article}
+
+% Preparando para documento en Español.
+% Para documento en Inglés no hay que hacer esto.
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+
+% EL titulo, autor y fecha del documento
+\title{Manual breve sobre los comandos de Bash}
+\author{Luisa Fernanda Orci Fernandez}
+\date{04 de Febrero del 2015}
+
+% Aqui comienza el cuerpo del documento
+\begin{document}
+\maketitle
+% Construye el título
+\begin{longtable}{|p{1 in}|p{3.0 in}|p{2 in}|}
+\hline
+Comando & Descripci\'on & Ejemplo \\
+\hline
+echo SHELL & Te muestra el shell que estas utilizando. & /bin/bash \\
+flecha hacia arriba y hacia abajo & Se utilian para navegar en el historial de los comandos utilizados, es un atajo. & arriba, abajo \\
+
+pwd & Son las siglas de Present Working Directory, se refiere al directorio en el que estas actualmente & pwd \\
+
+ls & Da una lista de todo el contenido de un directorio & ls \\
+
+ls -a & Da una lista de todos los archivos de un directorio incluyendo los archivos escondidos & ls -a \\
+
+cd & Abrebiacion para Cambio de Directorio, te mueve del directorio donde estas a otro & cd Notas \\
+
+file & Te da la informacion sobre el archivo o directorio en el cual estas & file notas.txt \\
+
+man comando & Busca el comando en el manual & man bash \\
+
+man -k & Palabra que se esta buscando, busca la palabra o termino en el manual & man -k shell \\
+
+mkdir & Se utiliza para crear un nuevo directorio, (make directory en ingles) & mkdir Fotos \\
+
+rmdir & Se utiliza para eliminar un directorio, (remove directory en ingles) & rmdir Fotos \\
+
+touch & Crea un archivo en blanco & touch Libro \\
+
+cp & Se utiliza para copiar una foto o un directorio, se pone primero el comando, seguido del archivo o directorio que se desea copiar, seguido del nombre del directorio o archivo donde se va a pegar & cp Fotos fotos \\
+
+mv & Se utiliza para renombrar archivos y directorios & mv fotos pictures \\
+
+rm & Borra un archivo, (en ingels remove) & rm Libro \\
+
+vi & Se utiliza para editar un archivo & vi notas.txt \\
+
+cat & Se utiliza para ver un archivo & cat notas.txt \\
+
+less & Se utiliza para ver archivos grandes de una forma mas ordenada & less notas.txt \\
+
+chmod & Cambia los permisos de un archivo o de un directorio & chmod Notas 777 \\
+
+ls -ld & Te muestra los permisos de un directorio en particular & ls -ld Notas \\
+
+grep & Nos permite buscar dentro de nuestros archivos & grep cadena archivo \\
+
+$|$ (pipe) & Sirve para que la salida de un archivo se redirija a la entrada de otro & grep nose notas.txt $|$ gzip $>$ archivo \\
+
+kill & Mata un proceso & kill 309 \\
+
+echo & Imprime mensajes en la pantalla & echo hola \\
+
+date & Te da el dia, la fecha y la hora & Date
+Tue Jan 27 19:30:30 MTS 2015 \\ \hline
+\end{longtable}
+
+
+
+% Nunca debe faltar esta última linea.
+
+\end{document}

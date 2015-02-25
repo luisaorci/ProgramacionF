@@ -1,0 +1,38 @@
+(%i1) f(x):= log(cos(x));
+(%o1)                         f(x) := log(cos(x))
+(%i2) t1(x):=taylor(f(x), x, 0, 1);
+(%o2)                   t1(x) := taylor(f(x), x, 0, 1)
+(%i3) t3(x):=taylor(f(x), x, 0, 3);
+(%o3)                   t3(x) := taylor(f(x), x, 0, 3)
+(%i4) t5(x):=taylor(f(x), x, 0, 5);
+(%o4)                   t5(x) := taylor(f(x), x, 0, 5)
+(%i5) t7(x):=taylor(f(x), x, 0, 7);
+(%o5)                   t7(x) := taylor(f(x), x, 0, 7)
+(%i6) fortran(t1(x));
+      0
+(%o6)                                done
+(%i7) fortran(t3(x));
+      -x**2/2.0E+0
+(%o7)                                done
+(%i8) fortran(t5(X));
+      -X**4/1.2E+1-X**2/2.0E+0
+(%o8)                                done
+(%i9) fortran(t7(X));
+      -X**6/4.5E+1-X**4/1.2E+1-X**2/2.0E+0
+(%o9)                                done
+(%i10) tex(t1(x));
+$$+0+\cdots $$
+(%o10)                               false
+(%i11) tex(t3(x));
+$$+-{{x^2}\over{2}}+\cdots $$
+(%o11)                               false
+(%i12) tex(t5(x));
+$$-{{x^2}\over{2}}-{{x^4}\over{12}}+\cdots $$
+(%o12)                               false
+(%i13) tex(t7(x));
+$$-{{x^2}\over{2}}-{{x^4}\over{12}}-{{x^6}\over{45}}+\cdots $$
+(%o13)                               false
+(%i14) plot2d ([f(x),t1(x), t3(x), t5(x), t7(x)], [x, -%pi/2, %pi/2 ], [y, -2, 2]);
+plot2d: some values were clipped.
+plot2d: some values were clipped.
+(%o14) 

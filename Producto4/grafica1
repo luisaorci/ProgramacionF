@@ -1,0 +1,39 @@
+(%i1) f(x):= sin(x);
+(%o1)                           f(x) := sin(x)
+(%i2) t1(x):=taylor(f(x), x, 0, 1);
+(%o2)                   t1(x) := taylor(f(x), x, 0, 1)
+(%i3) t3(x):=taylor(f(x), x, 0, 3);
+(%o3)                   t3(x) := taylor(f(x), x, 0, 3)
+(%i4) t5(x):=taylor(f(x), x, 0, 5);
+(%o4)                   t5(x) := taylor(f(x), x, 0, 5)
+(%i5) t4(x):=taylor(f(x), x, 0, 7);
+(%o5)                   t4(x) := taylor(f(x), x, 0, 7)
+(%i6) fortran(t1(x));
+      x
+(%o6)                                done
+(%i7) fortran(t3(x));
+      x-x**3/6.0E+0
+(%o7)                                done
+(%i8) fortran(t5(X));
+      X**5/1.2E+2-X**3/6.0E+0+X
+(%o8)                                done
+(%i9) fortran(t7(X));
+      t7(X)
+(%o9)                                done
+(%i10) tex(t1(x));
+$$+x+\cdots $$
+(%o10)                               false
+(%i11) tex(t3(x));
+$$x-{{x^3}\over{6}}+\cdots $$
+(%o11)                               false
+(%i12) tex(t5(x));
+                                   5     3
+                                  x     x
+(%o12)                         ex(--- - -- + x)
+                                  120   6
+(%i13) tex(t7(x));
+$${\it t_7}\left(x\right)$$
+(%o13)                               false
+(%i14) plot2d ([f(x),t1(x), t3(x), t5(x), t7(x)], [x, -%pi, %pi]);
+plot2d: expression evaluates to non-numeric value everywhere in plotting range.
+(%o14) 

@@ -4,7 +4,7 @@ program juego
   call sleep(5)
   write(*,*) 'Ahora multiplícalo por 9.'
   call sleep(5)
-  write(*,*) 'Si el múmero tiene 2 dígitos, súmalos entre si: Ej. 36 -> 3=6+9. Si tu número tiene un solo dígito, súmale 0.'
+  write(*,*) 'Si el múmero tiene 2 dígitos, súmalos entre si: Ej. 36 -> 3+6=9. Si tu número tiene un solo dígito, súmale 0.'
   call sleep(5)
   write (*,*) 'Al número resultante súmale 4.'
   call sleep(8)

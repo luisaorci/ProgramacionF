@@ -84,8 +84,10 @@ anguloInicial = anguloInicial*radianes
 
 
  
-call no_friccion (xInicial, yInicial, velocidadInicial, anguloInicial, xMax, yMax, tiempoFinal)
-call si_friccion (xInicial, yInicial, velocidadInicial, anguloInicial, xMaxF, yMaxF, tiempoFinalF)
+call no_friccion (xInicial, yInicial, 
+velocidadInicial, anguloInicial, xMax, yMax, tiempoFinal)
+call si_friccion (xInicial, yInicial,
+ velocidadInicial, anguloInicial, xMaxF, yMaxF, tiempoFinalF)
 
 diferencia = (((xMax-xMaxF)/xMax)*100)
 
@@ -116,7 +118,8 @@ endprogram proyectil
 
 
 
-subroutine no_friccion (xInicial, yInicial, velocidadInicial, anguloInicial, xMax, yMax, tiempoVuelo)
+subroutine no_friccion (xInicial, yInicial,
+ velocidadInicial, anguloInicial, xMax, yMax, tiempoVuelo)
 
 use constantes1
 implicit none
@@ -126,8 +129,10 @@ Real :: xInicial, yInicial, velocidadInicial, anguloInicial
 Real :: xMax, yMax, tiempoVuelo, incrementoTiempo, tiempo
 real :: xact, yact, vx, vy
 
-xMax = xInicial + ((velocidadInicial*velocidadInicial+sin(2*anguloInicial))/(gravedad))
-yMax = yInicial + (((velocidadInicial*velocidadInicial)*(sin(anguloInicial)*sin(anguloInicial)))/(2*gravedad))
+xMax = xInicial + ((velocidadInicial*velocidadInicial+sin
+(2*anguloInicial))/(gravedad))
+yMax = yInicial + (((velocidadInicial*velocidadInicial)*
+(sin(anguloInicial)*sin(anguloInicial)))/(2*gravedad))
 tiempoVuelo = (2*velocidadInicial*sin(anguloInicial))/(gravedad)
 incrementoTiempo = tiempoVuelo/muestreo
 
@@ -158,7 +163,8 @@ endsubroutine
 
 
 
-subroutine si_friccion (xInicial, yInicial, velocidadInicial, anguloInicial, xMaxF, yMaxF, tiempoVueloF)
+subroutine si_friccion (xInicial, yInicial, 
+velocidadInicial, anguloInicial, xMaxF, yMaxF, tiempoVueloF)
 
 use constantes1
 
@@ -205,7 +211,8 @@ do i = 0, muestreo
     vely(i+1) = vely(i) + aceleracionY(i)*tiempo(i+1)
 
     aceleracionX(i+1) = -(L/masa)*(sqrt((velx(i)*velx(i))+(vely(i)+vely(i))))*velx(i)
-    aceleracionY(i+1) =  -gravedad-(L/masa)*(sqrt((velx(i)*velx(i))+(vely(i)+vely(i))))*vely(i)
+    aceleracionY(i+1) =  -gravedad-(L/masa)*(sqrt((velx(i)*velx(i))+(vely(i)+
+    vely(i))))*vely(i)
 
     x(i+1) = x(i)+velx(i)*tiempo(i+1)+(0.5*aceleracionX(i)*tiempo(i+1)*tiempo(i+1))
     y(i+1) = y(i)+vely(i)*tiempo(i+1)+(0.5*aceleracionY(i)*tiempo(i+1)*tiempo(i+1))

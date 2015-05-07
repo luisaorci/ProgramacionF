@@ -1,0 +1,8 @@
+
+set terminal wxt enhanced font 'Verdana,10' persist
+set multiplot
+set title "Tiro parabolico"
+set ylabel "Distancia en y"
+set xlabel "Distancia en x"
+plot "no_friccion.dat" with points pointtype 7, "si_friccion.dat" with points pointtype 9
+unset multiplot

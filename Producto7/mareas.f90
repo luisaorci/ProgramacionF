@@ -12,6 +12,18 @@ real :: Tiempo11, Tiempo12, Tiempo13, Tiempo14, Tiempo15
 real :: Datos2, MinDia1, MinDia2, MinDia3
 real :: Minima1, Minima2, Minima3, Minima4, Minima5
 real :: Tiempo21, Tiempo22, Tiempo23, Tiempo24, Tiempo25
+real :: Tiempox1, Tiempox2, Tiempox3
+real :: Tiempon1, Tiempon2, Tiempon3
+real :: PeriodoMesMax1, PeriodoMesMax2, PeriodoMesMax3, PeriodoMesMax4
+real :: PeriodoMesMax5
+real :: PeriodoMesMin1, PeriodoMesMin2, PeriodoMesMin3, PeriodoMesMin4
+real :: PeriodoMesMin5
+real :: PeriodoDiaMax1, PeriodoDiaMax2, PeriodoDiaMax3
+real :: PeriodoDiaMin1, PeriodoDiaMin2, PeriodoDiaMin3
+real :: PeriodoMesMaximo
+real :: PeriodoMesMinimo
+real :: PeriodoDiaMaximo
+real :: PeriodoDiaMinimo
 
 
 
@@ -140,6 +152,9 @@ do i = 1, 48
 Datos1 = MaxDia1 - altura(i)
 if(Datos1<0) then 
 MaxDia1 = altura(i)
+
+Tiempox1 = i * 0.5
+
 end if 
 end do
 
@@ -148,6 +163,9 @@ do i = 1, 48
 Datos2 = MinDia1 - altura(i)
 if (Datos2>0) then
 MinDia1 = altura(i)
+
+Tiempon1 = i * 0.5
+
 end if
 end do
 
@@ -158,6 +176,9 @@ do i = 49, 97
 Datos1 = MaxDia2 - altura(i)
 if (Datos2<0) then
 MaxDia2 = altura(i)
+
+Tiempox2 = i * 0.5
+
 end if
 end do
 
@@ -166,6 +187,9 @@ do i = 49, 97
 Datos2 = MinDia2 - altura(i)
 if (Datos2>0) then
 MinDia2 = altura(i)
+
+Tiempon2 = i * 0.5
+
 end if 
 end do
 
@@ -176,6 +200,9 @@ do i = 98, 146
 Datos1 = MaxDia3 - altura(i)
 if (Datos1<0) then
 MaxDia3 = altura(i)
+
+Tiempox3 = i * 0.5
+
 end if
 end do
 
@@ -184,8 +211,44 @@ do i = 98, 146
 Datos2 = MinDia3 - altura(i)
 if (Datos2>0) then 
 MinDia3 = altura(i)
+
+Tiempon3 = i * 0.5
+
 end if 
 end do 
+
+! PERIODOS
+
+PeriodoMesMax1 = Tiempo11
+PeriodoMesMax2 = Tiempo12 - Tiempo11
+PeriodoMesMax3 = Tiempo13 - Tiempo12
+PeriodoMesMax4 = Tiempo14 - Tiempo13
+PeriodoMesMax5 = Tiempo15 - Tiempo14
+
+PeriodoMesMin1 = Tiempo21
+PeriodoMesMin2 = Tiempo22 - Tiempo21
+PeriodoMesMin3 = Tiempo23 - Tiempo22
+PeriodoMesMin4 = Tiempo24 - Tiempo23
+PeriodoMesMin5 = Tiempo25 - Tiempo24
+
+PeriodoDiaMax1 = Tiempox1
+PeriodoDiaMax2 = Tiempox2 - Tiempox1
+PeriodoDiaMax3 = Tiempox3 - Tiempox2
+
+PeriodoDiaMin1 = Tiempon1
+PeriodoDiaMin2 = Tiempon2 - Tiempon1
+PeriodoDiaMin3 = Tiempon3 - Tiempon2
+
+! PERIODOS MAXIMOS Y MINIMOS
+
+PeriodoMesMaximo = ( PeriodoMesMax1 + PeriodoMesMax2 + PeriodoMesMax3 + PeriodoMesMax4 + PeriodoMesMax5 ) / 5.0
+PeriodoMesMinimo = ( PeriodoMesMin1 + PeriodoMesMin2 + PeriodoMesMin3 + PeriodoMesMin4 + PeriodoMesMin5 ) / 5.0
+
+PeriodoDiaMaximo = ( PeriodoDiaMax1 + PeriodoDiaMax2 + PeriodoDiaMax3 ) / 3.0
+PeriodoDiaMinimo = ( PeriodoDiaMin1 + PeriodoDiaMin2 + PeriodoDiaMin3 ) / 3.0
+
+
+
 
 
 Print * , ' ========================================================== '
@@ -213,6 +276,41 @@ Print * , 'Mes tres:' , Minima3 , 'En el día:' , Tiempo23
 Print * , 'Mes cuatro:' , Minima4 , 'En el día:' , Tiempo24
 Print * , 'Mes cinco:' , Minima5 , 'En el día:' , Tiempo25
 Print * , ' ========================================================== '
+Print * , ' PERIODO MAXIMO POR MES '
+Print * , ' ========================================================== '
+Print * , 'Periodo 1:' , PeriodoMesMax1
+Print * , 'Periodo 2:' , PeriodoMesMax2
+Print * , 'Periodo 3:' , PeriodoMesMax3
+Print * , 'Periodo 4:' , PeriodoMesMax4
+Print * , 'Periodo 5:' , PeriodoMesMax5
+Print * , ' ========================================================== '
+Print * , 'PERIODO MINIMO POR MES'
+Print * , ' ========================================================== '
+Print * , 'Periodo 1:' , PeriodoMesMin1
+Print * , 'Periodo 2:' , PeriodoMesMin2
+Print * , 'Periodo 3:' , PeriodoMesMin3
+Print * , 'Periodo 4:' , PeriodoMesMin4
+Print * , 'Periodo 5:' , PeriodoMesMin5
+Print * , ' ========================================================== '
+Print * , ' PERIODO MAXIMO POR DIA '
+Print * , ' ========================================================== '
+Print * , 'Periodo 1:' , PeriodoDiaMax1
+Print * , 'Periodo 2:' , PeriodoDiaMax2
+Print * , 'Periodo 3:' , PeriodoDiaMax3
+Print * , ' ========================================================== '
+Print * , ' PERIODO MINIMO POR DIA '
+Print * , ' ========================================================== '
+Print * , 'Periodo 1:' , PeriodoDiaMin1
+Print * , 'Periodo 2:' , PeriodoDiaMin2
+Print * , 'Periodo 3:' , PeriodoDiaMin3
+Print * , ' ========================================================== '
+Print * , 'PROMEDIO DEL PERIODO MAXIMO Y MINIMO POR MES:' 
+Print * , 'Maximo:' , PeriodoMesMaximo
+Print * , 'Minimo:' , PeriodoMesMinimo
+Print * , ' ========================================================== '
+Print * , 'PROMEDIO DEL PERIODO MAXIMO Y MINIMO POR DIA:'
+Print * , 'Maximo:' , PeriodoDiaMaximo
+Print * , 'Minimo:' , PeriodoDiaMinimo
 
  
 
